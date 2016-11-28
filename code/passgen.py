@@ -82,6 +82,7 @@ class PassGen(object):
         self.ta = Person(self.get_ta_kws(), self.level, self.min_len)
         self.love_ext = ExtSet().love_ext
         self.love_and = ExtSet().love_and
+        self.set_top_passwd()
         self.set_passwd()
         self.save_file()
     def get_main_kws(self):
@@ -105,18 +106,18 @@ class PassGen(object):
             'phone': self.kws.get('taphone', ''),
             'birthday': self.kws.get('tabirthday', '')
         }
-    def get_top_passwd(self):
+    def set_top_passwd(self):
         top_passwd = []
         try:
-            with open('top_passwd.txt', 'r') as f:
-                for x in range(level * 50):
-                    top_passwd.append((f.readline().strip(), 3))
+            with open('/root/code/top_passwd.txt', 'r') as f:
+                for x in range(self.level * 50):
+                    top_passwd.append((3, f.readline().strip()))
         except:
             print('Get top password file error')
-        return top_passwd
+        self.top_passwd = top_passwd
     def set_passwd(self):
         love_passwd = keys_merge(self.ta.words, self.love_ext) + keys_merge(self.love_ext, self.ta.words) + keys_merge(self.pa.words, self.love_and, self.ta.words)
-        merged_keys = self.pa.passwd + self.ta.passwd + love_passwd
+        merged_keys = self.pa.passwd + self.ta.passwd + love_passwd + self.top_passwd
         passwd = self.pa.pwd + len_limit(sorted(merged_keys), self.min_len, self.max_len)
         if self.level == 0:
             passwd = [num_filter(x) for x in passwd if self.min_len <= len(num_filter(x)) <= self.max_len]
