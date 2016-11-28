@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from flask import Flask, render_template, request, Response, json, jsonify,send_from_directory,abort, redirect
+from flask import Flask, render_template, request, send_from_directory,abort, redirect
 from passgen import PassGen
 
 app = Flask(__name__)
@@ -22,5 +22,5 @@ def index():
         return render_template('index.html')
 
 if __name__ == "__main__":
-    app.debug = True
+    # app.debug=True
     app.run(host='0.0.0.0')
