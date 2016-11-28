@@ -17,6 +17,7 @@ Demo: <http://pass.github.tk>
 ## USAGE
 
 `git clone http://github.com/0xHJK/passgen`
+
 `cd passgen && bash rock.sh`
 
 Open browser and Go to http://localhost:5000/
