@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/main.min.css">
+    <title>简易密码字典生成器</title>
+</head>
+<body>
+    <div class="container">
+        <section class="header">
+            <h2 class="title">A simple password dictionary generator</h2>
+            <p>姓名每个字用空格隔开，多个字段间用英文逗号(,)隔开。<br>
+            字典大小和选择的强度长度正相关，并不是越大越好。<br>
+            仅供测试使用，请遵守法律法规，不得用于非法用途。<br>
+            算法是拍脑袋决定的，如有猜中，纯属巧合。</p>
+        </section>
+        <form action="/" method="POST">
+            <section class="info">
+                <div class="row">
+                    <div class="six columns">
+                        <label for="idcard">身份证号</label>
+                        <input type="number" class="u-full-width" name="idcard" id="idcard">
+                    </div>
+                    <div class="six columns">
+                        <label for="uid">学号／工号</label>
+                        <input type="text" class="u-full-width" name="uid" id="uid">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <label for="cname">姓名拼音</label>
+                        <input type="text" class="u-full-width" name="cname" id="cname" placeholder="wang da chui">
+                    </div>
+                    <div class="six columns">
+                        <label for="ename">英文名／昵称</label>
+                        <input type="text" class="u-full-width" name="ename" id="ename" placeholder="jack ma, tom, ...">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <label for="phone">手机号</label>
+                        <input type="text" class="u-full-width" name="phone" id="phone" placeholder="13011223344, 18044556677, ...">
+                    </div>
+                    <div class="six columns">
+                        <label for="tel">电话</label>
+                        <input type="text" class="u-full-width" name="tel" id="tel" placeholder="010-66668888, 89897575, ...">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <label for="wechat">微信号</label>
+                        <input type="text" class="u-full-width" name="wechat" id="wechat" placeholder="xyz666, papa233, ...">
+                    </div>
+                    <div class="six columns">
+                        <label for="qq">QQ号</label>
+                        <input type="text" class="u-full-width" name="qq" id="qq" placeholder="11112222, 666669999, ...">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <label for="email">邮箱</label>
+                        <input type="text" class="u-full-width" name="email" id="email" placeholder="username@xxx.com, ...">
+                    </div>
+                    <div class="six columns">
+                        <label for="birthday">生日</label>
+                        <input type="text" class="u-full-width" name="birthday" id="birthday" placeholder="19880101">
+                    </div>
+                </div>
+            </section>
+            <section class="info">
+                <div class="row">
+                    <div class="six columns">
+                        <label for="tacname">TA的姓名拼音</label>
+                        <input type="text" class="u-full-width" name="tacname" id="tacname">
+                    </div>
+                    <div class="six columns">
+                        <label for="taename">TA的英文名／昵称</label>
+                        <input type="text" class="u-full-width" name="taename" id="taename">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <label for="taphone">TA的手机号</label>
+                        <input type="text" class="u-full-width" name="taphone" id="taphone">
+                    </div>
+                    <div class="six columns">
+                        <label for="tabirthday">TA的生日</label>
+                        <input type="text" class="u-full-width" name="tabirthday" id="tabirthday">
+                    </div>
+                </div>
+            </section>
+            <section class="info">
+                <div class="row">
+                    <label for="others">其他补充</label>
+                    <input type="text" class="u-full-width" name="others" id="others" placeholder="xyz, 666, 233, +1s, ...">
+                </div>
+                <div class="row">
+                    <div class="four columns">
+                        <label for="level">密码强度</label>
+                        <select name="level" id="level" class="u-full-width">
+                            <option value="0">纯数字</option>
+                            <option value="1" selected="selected">一般</option>
+                            <option value="3">加强</option>
+                            <option value="4">超强</option>
+                        </select>
+                    </div>
+                    <div class="four columns">
+                        <label for="minlen">最短长度</label>
+                        <select name="minlen" id="minlen" class="u-full-width">
+                            <option value="1">1</option>
+                            <option value="6" selected="selected">6</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+                    <div class="four columns">
+                        <label for="maxlen">最长长度</label>
+                        <select name="maxlen" id="maxlen" class="u-full-width">
+                            <option value="12">12</option>
+                            <option value="16" selected="selected">16</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            <div class="row">
+                <button class="button-primary u-full-width">生成字典</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
