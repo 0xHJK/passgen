@@ -14,6 +14,8 @@ A simple password dictionary generator.
 
 Demo: <http://pass.github.tk>
 
+生成策略说明：<http://hjk.im/p/passgen.html>
+
 ## USAGE
 
 `git clone http://github.com/0xHJK/passgen`
