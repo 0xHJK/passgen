@@ -17,6 +17,6 @@ class BirthSet(object):
             for x in s:
                 self.set_all(x)
 
-if __name__ == '__main__':
-    b = BirthSet(['19930201', '19951204'])
-    print(b.all)
+# if __name__ == '__main__':
+#     b = BirthSet(['19930201', '19951204'])
+#     print(b.all)

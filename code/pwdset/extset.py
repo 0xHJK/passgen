@@ -14,7 +14,7 @@ class ExtSet(object):
         self.love_ext   = [(3, '520'), (3, '1314'), (3, '5201314'), (3, 'love')]
         self.love_and = [(3, 'love'), (4, 'ai')]
 
-if __name__ == '__main__':
-    e = ExtSet()
-    print(e.str_ext)
+# if __name__ == '__main__':
+#     e = ExtSet()
+#     print(e.str_ext)
     
